@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PMDB" Class="PMDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PMDB.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PMDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="C_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="C_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="C_Desc" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Video" Member="Videos" ThisKey="C_ID" OtherKey="V_Cat" Type="Video" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User_Type" Member="User_Types">
+    <Type Name="User_Type">
+      <Column Name="T_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="T_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Type_User" Member="Users" ThisKey="T_ID" OtherKey="U_Type" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="U_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="U_Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="U_Join" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="U_Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="U_Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="U_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="U_LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="User_Video" Member="Videos" ThisKey="U_ID" OtherKey="V_User" Type="Video" />
+      <Association Name="User_View" Member="Views" ThisKey="U_ID" OtherKey="Vi_User" Type="View" />
+      <Association Name="User_Like" Member="Likes" ThisKey="U_ID" OtherKey="L_User" Type="Like" />
+      <Association Name="User_Comment" Member="Comments" ThisKey="U_ID" OtherKey="CM_User" Type="Comment" />
+      <Association Name="User_Type_User" Member="User_Type" ThisKey="U_Type" OtherKey="T_ID" Type="User_Type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Video" Member="Videos">
+    <Type Name="Video">
+      <Column Name="V_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="V_Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="V_Desc" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="V_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="V_Link" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="V_Cat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="V_User" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Video_View" Member="Views" ThisKey="V_ID" OtherKey="Vi_Video" Type="View" />
+      <Association Name="Video_Like" Member="Likes" ThisKey="V_ID" OtherKey="L_Video" Type="Like" />
+      <Association Name="Video_Comment" Member="Comments" ThisKey="V_ID" OtherKey="CM_Video" Type="Comment" />
+      <Association Name="Category_Video" Member="Category" ThisKey="V_Cat" OtherKey="C_ID" Type="Category" IsForeignKey="true" />
+      <Association Name="User_Video" Member="User" ThisKey="V_User" OtherKey="U_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[View]" Member="Views">
+    <Type Name="View">
+      <Column Name="Vi_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vi_Video" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vi_User" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vi_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Video_View" Member="Video" ThisKey="Vi_Video" OtherKey="V_ID" Type="Video" IsForeignKey="true" />
+      <Association Name="User_View" Member="User" ThisKey="Vi_User" OtherKey="U_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Like]" Member="Likes">
+    <Type Name="Like">
+      <Column Name="L_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="L_Video" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="L_User" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Video_Like" Member="Video" ThisKey="L_Video" OtherKey="V_ID" Type="Video" IsForeignKey="true" />
+      <Association Name="User_Like" Member="User" ThisKey="L_User" OtherKey="U_ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comment" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="CM_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CM_User" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CM_Video" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CM_Comment" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CM_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="User_Comment" Member="User" ThisKey="CM_User" OtherKey="U_ID" Type="User" IsForeignKey="true" />
+      <Association Name="Video_Comment" Member="Video" ThisKey="CM_Video" OtherKey="V_ID" Type="Video" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Insert_User" Method="Insert_User">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="Insert_UserResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Validate_User1" Method="Validate_User1">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="Validate_User1Result">
+      <Column Name="U_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SaveVideo" Method="SaveVideo">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="Video" Parameter="video" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="category" Type="System.Int32" DbType="Int" />
+    <Parameter Name="date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="user" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetRole" Method="GetRole">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRoleResult">
+      <Column Name="U_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetVideoOwner" Method="GetVideoOwner">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetVideoOwnerResult">
+      <Column Name="V_User" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AddView" Method="AddView">
+    <Parameter Name="video" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddComment" Method="AddComment">
+    <Parameter Name="video" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="comment" Type="System.String" DbType="NVarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetCommentOwner" Method="GetCommentOwner">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetCommentOwnerResult">
+      <Column Name="CM_User" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

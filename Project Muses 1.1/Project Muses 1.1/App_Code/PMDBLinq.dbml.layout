@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.625" name="DataClasses">
+  <DataContextMoniker Name="/PMDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f4c1eda4-fee7-46dc-88d9-d9a18d0dc22d" absoluteBounds="3.5, 0.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/PMDBDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db7714ec-a84e-4de8-a88d-2a968a04f129" absoluteBounds="3.5149999999999997, 1.3350000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e8395c94-4023-47e3-9dd9-61437149e205" absoluteBounds="0.75, 4, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PMDBDataContext/User_Type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1197ae8b-a733-4f67-98e0-484d95babf20" absoluteBounds="0.76500000000000012, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9f17947-0270-4d4d-ae2b-979741c68820" absoluteBounds="3.5, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PMDBDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c868bade-41d4-4e01-a42e-608c79ab39ef" absoluteBounds="3.5149999999999997, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PMDBDataContext/User_Type/User_Type_User" />
+      <nodes>
+        <classShapeMoniker Id="e8395c94-4023-47e3-9dd9-61437149e205" />
+        <classShapeMoniker Id="f9f17947-0270-4d4d-ae2b-979741c68820" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b96f53fc-e17c-43d0-99bc-c789697af7df" absoluteBounds="6.25, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PMDBDataContext/Video" />
+      <nestedChildShapes>
+        <elementListCompartment Id="136b4344-6744-4065-ae46-3da9013c9556" absoluteBounds="6.265, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.56814697265625); (7.25 : 1.56814697265625); (7.25 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PMDBDataContext/Category/Category_Video" />
+      <nodes>
+        <classShapeMoniker Id="f4c1eda4-fee7-46dc-88d9-d9a18d0dc22d" />
+        <classShapeMoniker Id="b96f53fc-e17c-43d0-99bc-c789697af7df" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.57774983723958); (6.25 : 4.57774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PMDBDataContext/User/User_Video" />
+      <nodes>
+        <classShapeMoniker Id="f9f17947-0270-4d4d-ae2b-979741c68820" />
+        <classShapeMoniker Id="b96f53fc-e17c-43d0-99bc-c789697af7df" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e250094e-d64a-4f05-bd5e-849428dcd3ae" absoluteBounds="9, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PMDBDataContext/View" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38cc2331-d22e-4247-b4b7-a85e22f7fa0a" absoluteBounds="9.015, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.7812525 : 3.5); (7.7812525 : 1.15907348632813); (9 : 1.15907348632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PMDBDataContext/Video/Video_View" />
+      <nodes>
+        <classShapeMoniker Id="b96f53fc-e17c-43d0-99bc-c789697af7df" />
+        <classShapeMoniker Id="e250094e-d64a-4f05-bd5e-849428dcd3ae" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.5); (5.875 : 3.125); (5.875 : 1.94837067513021); (7.16666666666667 : 1.94837067513021 : JumpStart); (7.33333333333333 : 1.94837067513021 : JumpEnd); (9 : 1.94837067513021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PMDBDataContext/User/User_View" />
+      <nodes>
+        <classShapeMoniker Id="f9f17947-0270-4d4d-ae2b-979741c68820" />
+        <classShapeMoniker Id="e250094e-d64a-4f05-bd5e-849428dcd3ae" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c8ac7dec-40ed-46ff-a63a-aacaed0fdce9" absoluteBounds="9, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PMDBDataContext/Like" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee0f819b-0731-4740-b9c4-e962eafbeb88" absoluteBounds="9.015, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 4.56814697265625); (9 : 4.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PMDBDataContext/Video/Video_Like" />
+      <nodes>
+        <classShapeMoniker Id="b96f53fc-e17c-43d0-99bc-c789697af7df" />
+        <classShapeMoniker Id="c8ac7dec-40ed-46ff-a63a-aacaed0fdce9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.468748 : 3.5); (4.468748 : 3.25); (5.66666666666667 : 3.25 : JumpStart); (5.83333333333333 : 3.25 : JumpEnd); (7.16666666666667 : 3.25 : JumpStart); (7.33333333333333 : 3.25 : JumpEnd); (8.625 : 3.25); (8.625 : 4.19032148632813); (9 : 4.19032148632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PMDBDataContext/User/User_Like" />
+      <nodes>
+        <classShapeMoniker Id="f9f17947-0270-4d4d-ae2b-979741c68820" />
+        <classShapeMoniker Id="c8ac7dec-40ed-46ff-a63a-aacaed0fdce9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b7223f0b-69b9-450c-92da-e43df667cbe9" absoluteBounds="9, 6.625, 2, 1.7708968098958318">
+      <DataClassMoniker Name="/PMDBDataContext/Comment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5bbfb0ea-344f-482d-ba65-1808f1fa3fe4" absoluteBounds="9.015, 7.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 5.65549967447917); (4.5 : 7.51044840494792); (9 : 7.51044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PMDBDataContext/User/User_Comment" />
+      <nodes>
+        <classShapeMoniker Id="f9f17947-0270-4d4d-ae2b-979741c68820" />
+        <classShapeMoniker Id="b7223f0b-69b9-450c-92da-e43df667cbe9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 5.65549967447917); (7.25 : 7.03647170247396); (9 : 7.03647170247396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PMDBDataContext/Video/Video_Comment" />
+      <nodes>
+        <classShapeMoniker Id="b96f53fc-e17c-43d0-99bc-c789697af7df" />
+        <classShapeMoniker Id="b7223f0b-69b9-450c-92da-e43df667cbe9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

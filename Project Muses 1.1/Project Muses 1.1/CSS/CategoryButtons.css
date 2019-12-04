@@ -1,0 +1,146 @@
+﻿.CategoryButton1 {
+    background: url("/Assets/Categories/DIY.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    width: 350px;
+    height: 197px;
+    top: 0px;
+}
+
+    .CategoryButton1:hover {
+        background: url("/Assets/Categories/DIY2.png") no-repeat scroll 0 0 transparent;
+    }
+
+.CategoryButton2 {
+    background: url("/Assets/Categories/Craft.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    top: -197px;
+    left: 360px;
+    width: 350px;
+    height: 197px;
+}
+
+    .CategoryButton2:hover {
+        background: url("/Assets/Categories/Craft2.png") no-repeat scroll 0 0 transparent;
+    }
+
+.CategoryButton3 {
+    background: url("/Assets/Categories/Arduino.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    top: -394px;
+    left: 721px;
+    width: 350px;
+    height: 197px;
+}
+
+    .CategoryButton3:hover {
+        background: url("/Assets/Categories/Arduino2.png") no-repeat scroll 0 0 transparent;
+    }
+
+.CategoryButton4 {
+    background: url("/Assets/Categories/Cooking.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    top: -379px;
+    width: 350px;
+    height: 197px;
+}
+
+    .CategoryButton4:hover {
+        background: url("/Assets/Categories/Cooking2.png") no-repeat scroll 0 0 transparent;
+    }
+
+.CategoryButton5 {
+    background: url("/Assets/Categories/Pets.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    top: -576px;
+    left: 360px;
+    width: 350px;
+    height: 197px;
+}
+
+    .CategoryButton5:hover {
+        background: url("/Assets/Categories/Pets2.png") no-repeat scroll 0 0 transparent;
+    }
+
+.CategoryButton6 {
+    background: url("/Assets/Categories/Internet.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    top: -773px;
+    left: 721px;
+    width: 350px;
+    height: 197px;
+}
+
+    .CategoryButton6:hover {
+        background: url("/Assets/Categories/Internet2.png") no-repeat scroll 0 0 transparent;
+    }
+
+.CategoryButton7 {
+    background: url("/Assets/Categories/hacks.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    top: -758px;
+    width: 350px;
+    height: 197px;
+}
+
+    .CategoryButton7:hover {
+        background: url("/Assets/Categories/hacks2.png") no-repeat scroll 0 0 transparent;
+    }
+
+.CategoryButton8 {
+    background: url("/Assets/Categories/3d.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    top: -955px;
+    left: 360px;
+    width: 350px;
+    height: 197px;
+}
+
+    .CategoryButton8:hover {
+        background: url("/Assets/Categories/3d2.png") no-repeat scroll 0 0 transparent;
+    }
+
+.CategoryButton9 {
+    background: url("/Assets/Categories/Environment.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    top: -1152px;
+    left: 721px;
+    width: 350px;
+    height: 197px;
+}
+
+    .CategoryButton9:hover {
+        background: url("/Assets/Categories/Environment2.png") no-repeat scroll 0 0 transparent;
+    }
+
+.CategoryButton10 {
+    background: url("/Assets/Categories/Gardening.png") no-repeat scroll 0 0 transparent;
+    transition-duration: 0.5s;
+    display: block;
+    position: relative;
+    top: -1137px;
+    left: 360px;
+    width: 350px;
+    height: 197px;
+}
+
+    .CategoryButton10:hover {
+        background: url("/Assets/Categories/Gardening2.png") no-repeat scroll 0 0 transparent;
+    }

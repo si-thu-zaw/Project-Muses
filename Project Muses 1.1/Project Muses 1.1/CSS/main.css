@@ -1,0 +1,153 @@
+﻿* {
+    font-family: 'Space Mono', monospace;
+    font-size: 97%
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #1b87c1;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    z-index: 50;
+    height: 49px;
+}
+
+
+    .navbar a {
+        display: block;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 13px;
+        text-decoration: none;
+        font-size: 23px;
+        height: 22px;
+        position: fixed;
+        top: -10px;
+        left: 45px;
+        width: 242px;
+        margin-top: 0px;
+    }
+/*  .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }  */
+
+.logbutton1 {
+    position: fixed;
+    top: 2px;
+    left: 1163px;
+    z-index: 51;
+    color: white;
+}
+
+.logbutton2 {
+    position: fixed;
+    top: 22px;
+    left: 1160px;
+    z-index: 51;
+    color: white;
+    width: 139px;
+}
+
+.logbutton3 {
+    position: fixed;
+    top: 22px;
+    left: 1142px;
+    bottom: 286px;
+    margin-bottom: 2px;
+    z-index: 51;
+}
+
+.logbutton4 {
+    position: fixed;
+    top: 22px;
+    left: 1142px;
+    bottom: 286px;
+    margin-bottom: 0px;
+    z-index: 14;
+}
+
+    .logbutton4:hover {
+        position: fixed;
+        top: 22px;
+        left: 1142px;
+        bottom: 286px;
+        margin-bottom: 2px;
+        z-index: 14;
+        background-color: #1ab300;
+    }
+
+.logo {
+    width: 38px;
+    height: 40px;
+    padding-top: 7px;
+}
+
+.navbar input {
+    font-size: 25px;
+    position: fixed;
+    top: 7px;
+    left: 336px;
+    width: 350px;
+    font-size: 100%;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    left: 0px;
+    background-color: #e27a26;
+    overflow-x: hidden;
+    padding-top: 20px;
+    z-index: 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        color: white;
+        display: block;
+    }
+
+        .sidenav a:hover {
+            color: white;
+            background-color: brown;
+        }
+
+.main {
+    margin-top: 40px;
+    height: auto;
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 16px 26px 16px 16px;
+    font-size: 18px;
+}
+
+
+
+.video-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+}
+
+    .video-container iframe {
+        position: absolute;
+        top: 10;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.slider {
+    top: 52px;
+    z-index: -1;
+}

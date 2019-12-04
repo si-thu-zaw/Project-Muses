@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Project: Muses</title>
+    <link href="CSS/main.css" type="text/css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .logo {
+            height: 29px;
+            width: 28px;
+        }
+    </style>
+    <script runat="server">
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            int a = 0;
+            string b = "~/Users/Details.aspx?U_ID=";
+            a = Convert.ToInt32(Session["UserID"]);
+            string c = b + a;
+            HyperLink5.NavigateUrl = c;
+        }
+    </script>
+</head>
+<body bgcolor="#f3f1ec">
+    <form id="form2" runat="server">
+        <div class="navbar">
+            <a>&nbsp;&nbsp;&nbsp; </a>&nbsp;   
+            <a href="#">
+                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/default.aspx" runat="server">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/assets/logo2.png" CssClass="logo" ImageAlign="AbsMiddle" />&nbsp;Project:Muses   
+                </asp:HyperLink>
+            </a>
+            &nbsp;<asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged">Search</asp:TextBox>&nbsp;
+        </div>
+        <div>
+            <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="logbutton1" LogoutAction="Redirect" OnLoggingOut="LoginStatus1_LoggingOut" LogoutPageUrl="default.aspx" />
+            <asp:HyperLink ID="HyperLink5" NavigateUrl="" runat="server">
+                <asp:LoginName CssClass="logbutton2" ID="LoginName1" runat="server" />
+            </asp:HyperLink>
+        </div>
+        <div class="sidenav">
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Categories.aspx">Categories</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Upload.aspx">Upload</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/About.aspx">About</asp:HyperLink>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="main" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="logbutton2">
+            <asp:LoginView ID="LoginView1" runat="server">
+                <AnonymousTemplate>
+                    <a href="#">
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Register.aspx">Register</asp:HyperLink></a>
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                </LoggedInTemplate>
+            </asp:LoginView>
+        </div>
+
+    </form>
+</body>
+</html>

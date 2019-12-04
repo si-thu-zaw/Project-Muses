@@ -3,7 +3,9 @@
 
 ## About Project
 
-The main purpose of the application is to provide a platform for sharing videos as tutorials under many categories, which are to be viewable to both visitors and members of the web site. These tutorials will be contributed by the members of the website and they will be encouraged to structure their videos to be educational in nature. The tutorials must fall under ten categories when they are uploaded. The users will also be able to add likes or dislikes and comments to the tutorials to provide better feedback to the other users.
+This website is created as a coursework project for 'Rapid Development Systems' module in September 2018.
+
+The main aim of the website is to serve as a platform for users to share videos as tutorials, with functions to aid usage of the website such as searching videos by name, category or uploader; adding comments to uploaded videos and typical user account controls such as login authentication, user account pages, etc.
 
 ## Technologies Used
 
@@ -17,10 +19,16 @@ The project is created using the following:
 * HTML5
 * CSS3
 
+## Documentation 
+
+The 'Design Document' details the steps taken in the creation of the project including requirements analysis; visual design and wireframes; details of the system design such as entity relationship diagram, use case diagram, data dictionaries and data processing queries; and security policies and access controls for users.
+
+The 'Login Instrucitons' detail the login credentials for the database as defined in the 'CREATE DB' file and also contains screenshots of the running application.
+
 
 ## Setup
 
 * Download the project files and run 'Project Muses 1.1.sln' in Microsoft Visual Studio 
-* Create the database in Visual Studio SQL Server 
+* Create the database in Visual Studio SQL Server using 'CREATE DB' SQL file. 
 * Run the app using IIS Express
 
